@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta ch arset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Address API List</title>
+
+  <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #customers td,
+    #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #customers tr:hover {
+      background-color: rgb(231, 122, 122);
+    }
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04aa6d;
+      color: white;
+    }
+
+    #method {
+      background-color: rgb(196, 43, 43);
+    }
+
+    #no {
+      width: 10px;
+    }
+
+    #name {
+      width: 55px;
+    }
+
+    #url {
+      width: 70px;
+    }
+
+    #method2 {
+      width: 45px;
+    }
+
+    #payload {
+      width: 225px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="background-color: rgba(64, 66, 190, 0.178); text-align: center">
+    Backend API list || Developed by Md.Tajal Islam
+  </h1>
+  <h3 style="text-align: center">Company Name: GREEHO.com</h3>
+  <hr />
+  <p style="text-align: center"><i>Module Name:</i><b>Lift-AC</b></p>
+  <p style="text-align: center"><i>Root-Url:</i><b>http://localhost:3001/api</b></p>
+
+  <a href="http://localhost:3001"> HOME </a>
+
+  <hr style="height: 6px; background-color: rgb(165, 177, 177)" />
+
+  <table id="customers">
+
+    <!-- column name  -->
+    <tr>
+      <th id="no">No</th>
+      <th id="name">Name</th>
+      <th id="url">URL</th>
+      <th id="method2">Method</th>
+      <th id="payload">Payload</th>
+      <th>Details</th>
+    </tr>
+
+    <!-- 1.add API  -->
+    <tr>
+      <td>1.</td>
+      <td>Add</td>
+      <td>/lift-ac</td>
+      <td><span id="method">POST</span></td>
+      <td>
+        <pre>
+***authVerify,
+{
+  "total": 2,
+  "brand": "samsung",
+  "capacity": 3,
+  "lastService": "2021/4/3",
+  "nextService": "2/5/2021"
+}      </pre>
+      </td>
+      <td>
+        <li>Validation</li>
+      </td>
+
+
+
+      <!-- 2.edit API  -->
+    <tr>
+      <td>2.</td>
+      <td>Edit</td>
+      <td>/lift-ac/:id</td>
+      <td><span id="method">PUT</span></td>
+      <td>
+        <pre>
+***authVerify,
+{
+  "total": 2,
+  "brand": "samsung -updated",
+  "capacity": 3,
+  "lastService": "2021/4/3",
+  "nextService": "2/5/2021"
+}      </pre>
+
+      </td>
+      <td>
+        <li>Validation</li>
+      </td>
+    </tr>
+
+
+    <!-- 3.Country remove API  -->
+    <tr>
+      <td>3.</td>
+      <td>Remove</td>
+      <td>/lift-ac/:id</td>
+      <td><span id="method">DELETE</span></td>
+      <td>
+        <pre>
+***authVerify,
+</pre>
+
+      </td>
+      <td>
+        <li>N/A</li>
+      </td>
+    </tr>
+
+
+    <!-- 4.Country view API  -->
+    <tr>
+      <td>4.</td>
+      <td>View</td>
+      <td>/lift-ac/:id</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        ***authVerify,
+
+      </td>
+      <td>
+        <li>N/A</li>
+      </td>
+    </tr>
+
+
+  </table>
+</body>
+
+</html>

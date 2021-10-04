@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta ch arset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart API List</title>
+
+  <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #customers td,
+    #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #customers tr:hover {
+      background-color: rgb(231, 122, 122);
+    }
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04aa6d;
+      color: white;
+    }
+
+    #method {
+      background-color: rgb(196, 43, 43);
+    }
+
+    #no {
+      width: 10px;
+    }
+
+    #name {
+      width: 55px;
+    }
+
+    #url {
+      width: 70px;
+    }
+
+    #method2 {
+      width: 45px;
+    }
+
+    #payload {
+      width: 225px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="background-color: rgba(64, 66, 190, 0.178); text-align: center">
+    Backend API list || Developed by Md.Tajal Islam
+  </h1>
+  <h3 style="text-align: center">Company Name: GREEHO.com</h3>
+  <hr />
+  <p style="text-align: center"><i>Module Name:</i><b>Cart</b></p>
+  <p style="text-align: center"><i>Root-Url:</i><b>http://localhost:3001/api</b></p>
+
+  <a href="http://localhost:3001"> HOME </a>
+
+  <hr style="height: 6px; background-color: rgb(165, 177, 177)" />
+
+  <table id="customers">
+
+    <!-- column name  -->
+    <tr>
+      <th id="no">No</th>
+      <th id="name">Name</th>
+      <th id="url">URL</th>
+      <th id="method2">Method</th>
+      <th id="payload">Payload</th>
+      <th>Details</th>
+    </tr>
+
+    <!-- 1.Cart add API  -->
+    <tr>
+      <td>1.</td>
+      <td>Add</td>
+      <td>/cart</td>
+      <td><span id="method">POST</span></td>
+      <td>
+        <pre>
+***authVerify,
+{
+  "serviceId":4, 
+  "category":"Basic AC Service", 
+  "headline":"2 ton ac repair", 
+  "overview":"Lots of line hi", 
+  "unit":1, 
+  "price":500,  
+  "subTotal":1000, 
+  "vat":300, 
+  "total":13001
+}      </pre>
+
+      </td>
+      <td>
+        <li>Validation</li>
+      </td>
+    </tr>
+
+
+    <!-- 2.Cart API get  -->
+    <tr>
+      <td>2.</td>
+      <td>View</td>
+      <td>/cart/td>
+      <td><span id="method">GET</span></td>
+      <td>
+        <pre>
+***authVerify,      
+        </pre>
+
+      </td>
+      <td>
+        <li>N/A</li>
+      </td>
+    </tr>
+
+
+    <!-- 3.Delete cart API  -->
+    <tr>
+      <td>3.</td>
+      <td>Delete</td>
+      <td>/cart</td>
+      <td><span id="method">DELETE</span></td>
+      <td>
+        <pre>
+***authVerify
+       </pre>
+
+      </td>
+      <td>
+        <li>N/A</li>
+      </td>
+    </tr>
+
+
+    <!-- 4.Delete category API  -->
+    <tr>
+      <td>4.</td>
+      <td>Order conform</td>
+      <td>/cart/:id</td>
+      <td><span id="method">PUT</span></td>
+      <td>
+        ***authVerify <br>
+        ***hasAccess('can_edit_cart'),<br>
+        { "conform":true }
+      </td>
+      <td>
+        <li>N/A</li>
+      </td>
+    </tr>
+
+
+    <!-- 5.User List API  -->
+    <tr>
+      <td>5.</td>
+      <td>Details</td>
+      <td>/cart/:id</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        ***authVerify <br>
+        ***hasAccess('can_view_cart'),
+      </td>
+      <td>
+        <li>N/A</li>
+      </td>
+    </tr>
+
+
+    <!-- 6.User List API  -->
+    <tr>
+      <td>6.</td>
+      <td>Cart List</td>
+      <td>/cart-list'</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        ***authVerify <br>
+        ***hasAccess('can_view_cart'),
+      </td>
+      <td>
+        <li>N/A</li>
+      </td>
+    </tr>
+
+
+  </table>
+</body>
+
+</html>

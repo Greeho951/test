@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta ch arset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property API List</title>
+
+  <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #customers td,
+    #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #customers tr:hover {
+      background-color: rgb(231, 122, 122);
+    }
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04aa6d;
+      color: white;
+    }
+
+    #method {
+      background-color: rgb(196, 43, 43);
+    }
+
+    #no {
+      width: 10px;
+    }
+
+    #name {
+      width: 55px;
+    }
+
+    #url {
+      width: 70px;
+    }
+
+    #method2 {
+      width: 45px;
+    }
+
+    #payload {
+      width: 225px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="background-color: rgba(64, 66, 190, 0.178); text-align: center">
+    Backend API list || Developed by Md.Tajal Islam
+  </h1>
+  <h3 style="text-align: center">Company Name: GREEHO.com</h3>
+  <hr />
+  <p style="text-align: center"><i>Module Name:</i><b>Property</b></p>
+  <p style="text-align: center"><i>Root-Url:</i><b>http://localhost:3001/api</b></p>
+
+  <a href="http://localhost:3001"> HOME </a>
+
+  <hr style="height: 6px; background-color: rgb(165, 177, 177)" />
+
+  <table id="customers">
+
+    <!-- column name  -->
+    <tr>
+      <th id="no">No</th>
+      <th id="name">Name</th>
+      <th id="url">URL</th>
+      <th id="method2">Method</th>
+      <th id="payload">Payload</th>
+      <th>Details</th>
+      <th>Status</th>
+    </tr>
+    <!-- ===========================================================================COUNTRY=================================================================== -->
+
+    <!-- 1.Property add API  -->
+    <tr>
+      <td>1.</td>
+      <td>Property</td>
+      <td>/property</td>
+      <td><span id="method">POST</span></td>
+      <td>
+        <pre>
+***authVerify,
+{
+  "buildingName":"New", 
+  "ownerName":"rifat sir",
+  "ownerNumber":"01883950739"
+}    </pre>
+
+      </td>
+      <td>
+        Success Message
+        <li>200:Responce data!</li><br>
+        Following errors may occur
+        <li>400:Required!</li>
+        <li>400:Must be string!</li>
+        <li>400:Minimum 3 character!</li>
+        <li>424:Please try again!</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+
+      </td>
+      <td>Done</td>
+    </tr>
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+
+    <!-- 2.Property edit API  -->
+    <tr>
+      <td>2.</td>
+      <td>Property</td>
+      <td>/property/:id</td>
+      <td><span id="method">PUT</span></td>
+      <td>
+        <pre>
+***authVerify,
+{
+  "buildingName":"New", 
+  "ownerName":"rifat sir",
+  "ownerNumber":"01883950739"
+}      </pre>
+
+      </td>
+      <td>
+        Success Message
+        <li>200:Update sucessfully!</li><br>
+        Following errors may occur
+        <li>400:Required!</li>
+        <li>400:Must be string!</li>
+        <li>400:Minimum 3 character!</li>
+        <li>424:Please try again!</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <td>Done</td>
+
+    </tr>
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 3.Property remove API  -->
+    <tr>
+      <td>3.</td>
+      <td>Property</td>
+      <td>/property</td>
+      <td><span id="method">DELETE</span></td>
+      <td>
+        <pre>
+***authVerify,
+</pre>
+
+      </td>
+      <td>
+        Success Message
+        <li>200:Delete sucessfully!</li><br>
+        Following errors may occur
+        <li>424:Please try again!</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <td>Done</td>
+
+    </tr>
+    <!-- ------------------------------------------------------------------------------------------- -->
+   <!-- 4.Property hard delete API  -->
+   <tr>
+    <td>4.</td>
+    <td>Property</td>
+    <td>/property-delete</td>
+    <td><span id="method">DELETE</span></td>
+    <td>
+      <pre>
+***authVerify,
+hasAccess('can_delete_property'),
+</pre>
+
+    </td>
+    <td>
+      Success Message
+      <li>200:Delete sucessfully!</li><br>
+      Following errors may occur
+      <li>404:You desired data set is empty!</li>
+      <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+    </td>
+    <td>Done</td>
+
+  </tr>
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 5.Property view API  -->
+    <tr>
+      <td>5.</td>
+      <td>Property</td>
+      <td>/property/:id</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        N/A
+
+      </td>
+      <td>
+        Success Message
+        <li>200:'Responce List'</li><br>
+        Following errors may occur
+        <li>404:You desired data set is empty!</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <td>Done</td>
+
+    </tr>
+    ===========================================================================CONTACTS===================================================================
+
+
+    <!-- 6.Contacts add API  -->
+    <tr>
+      <td>6.</td>
+      <td>Contacts</td>
+      <td>/contacts</td>
+      <td><span id="method">POST</span></td>
+      <td>
+        <pre>
+  ***authVerify,
+{
+  "contactName": "taj",
+  "contactNumber": "883950739",
+  "contactDesignation": "owg",
+  "propertyId":1
+}  </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:Update sucessfully!</li><br>
+        Following errors may occur
+        <li>400:Required!</li>
+        <li>400:Must be string!</li>
+        <li>400:Minimum 3 character!</li>
+        <li>424:Please try again!</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <td>Done</td>
+    </tr>
+
+
+    <!-- 7.Contacts update API  -->
+    <tr>
+      <td>7.</td>
+      <td>Contacts</td>
+      <td>/contacts/:id</td>
+      <td><span id="method">PUT</span></td>
+      <td>
+        <pre>
+  ***authVerify,
+{
+  "contactName": "tajal-update",
+  "contactNumber": "01883950739",
+  "contactDesignation": "owner"
+}    </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:Update sucessfully!</li><br>
+        Following errors may occur
+        <li>400:Required!</li>
+        <li>400:Must be string!</li>
+        <li>400:Minimum 3 character!</li>
+        <li>424:Please try again!</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <td>Done</td>
+    </tr>
+
+
+    <!-- 8.Contacts remove API  -->
+    <tr>
+      <td>8.</td>
+      <td>Contacts</td>
+      <td>/contacts/:id</td>
+      <td><span id="method">DELETE</span></td>
+      <td>
+        <pre>
+  ***authVerify,
+  ***hasAccess('can_delete_contacts'),
+   </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:Update sucessfully!</li><br>
+        Following errors may occur
+        <li>404:You desired data set is empty.</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <td>Done</td>
+    </tr>
+
+
+    <!-- 9.Contacts get API  -->
+    <tr>
+      <td>9.</td>
+      <td>Contacts</td>
+      <td>/contacts</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        <pre>
+***authVerify
+    </pre>
+      </td>
+
+      <td>
+        Success Message
+        <li>200:Responce List</li><br>
+        Following errors may occur
+        <li>404:You desired data set is empty.</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <td>Done</td>
+    </tr>
+
+
+    <!-- ===========================================================================BUILDING=================================================================== -->
+
+
+    <!-- 10.Building add API  -->
+    <tr>
+      <td>10.</td>
+      <td>Building</td>
+      <td>/building-info</td>
+      <td><span id="method">POST</span></td>
+      <td>
+        <pre>
+***authVerify,
+{
+  "propertyType":"normarsial",
+  "supportList":["shop","office"],
+  "totalArea":1300,
+  "areaCovered": 1200,
+  "totalFloor": 5,
+  "totalUnit": 10,
+  "unitPerFloor": 2,
+  "buildYear": 1995,
+  "developerCompany": "Greeho",
+  "rajukApproval": false,
+  "frontRoadSize": 12.5,
+  "buildingFacing": "east",
+  "nearByLandMark": "sukkurAli house",
+  "mostRequiredService": "AC service",
+  "gas": "LPG",
+  "electricity": "prepaid",
+  "water": "wasa",
+  "areaFacilities":["shop","school","university"],
+  "basicRules":["gate cloase 12.pm","wasting time"],
+  "commercialRules":["their is some rules","not breaking"],
+  "illegalIssue":false,
+  "propertyId":1
+
+}   </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:'Responce List'</li><br>
+        Following errors may occur
+        <li>406:Already created. You can update info!'</li>
+        <li>424:Please try again!'</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <td>Done</td>
+    </tr>
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 11.Building update API  -->
+    <tr>
+      <td>11.</td>
+      <td>Building</td>
+      <td>/building-info/:id</td>
+      <td><span id="method">PUT</span></td>
+      <td>
+        <pre>
+***authVerify,
+{
+  "propertyType":"normarsial",
+  "supportList":["shop","office"],
+  "totalArea":1300,
+  "areaCovered": 1200,
+  "totalFloor": 5,
+  "totalUnit": 10,
+  "unitPerFloor": 2,
+  "buildYear": 1995,
+  "developerCompany": "Greeho",
+  "rajukApproval": false,
+  "frontRoadSize": 12.5,
+  "buildingFacing": "east",
+  "nearByLandMark": "sukkurAli house",
+  "mostRequiredService": "AC service",
+  "gas": "LPG",
+  "electricity": "prepaid",
+  "water": "wasa",
+  "areaFacilities":["shop","school","university"],
+  "basicRules":["gate cloase 12.pm","wasting time"],
+  "commercialRules":["their is some rules","not breaking"],
+  "illegalIssue":false,
+  "propertyId":1
+
+}  </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:Update sucessfully!</li><br>
+        Following errors may occur
+        <li>424:Please try again!</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <td>Done</td>
+    </tr>
+
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 12.Building remove API  -->
+    <tr>
+      <td>12.</td>
+      <td>Building</td>
+      <td>/building-info/:id</td>
+      <td><span id="method">DELETE</span></td>
+      <td>
+  <pre>
+***authVerify
+hasAccess('can_delete_building_info')
+  </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:Update sucessfully!</li><br>
+        Following errors may occur
+        <li>404:You desired data set is empty.</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <td>Done</td>
+    </tr>
+
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 13.Building get API  -->
+    <tr>
+      <td>13.</td>
+      <td>Building</td>
+      <td>/building-info</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        <pre>
+    ***authVerify
+        </pre>
+      </td>
+
+      <td>
+        Success Message
+        <li>200:Responce List</li><br>
+        Following errors may occur
+        <li>404:You desired data set is empty.</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <td>Done</td>
+    </tr>
+
+
+
+    <!-- ===========================================================================THANA=================================================================== -->
+
+
+    <!-- 13.Thana add API  -->
+    <tr>
+      <td>13.</td>
+      <td>Thana</td>
+      <td>/thana</td>
+      <td><span id="method">POST</span></td>
+      <td>
+        <pre>
+***authVerify,
+***hasAccess('can_create_address'),
+{
+  "thana":["dhanmoni model-1","dhanmoni model-2","NM"],
+  "districtId":2
+}  </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:'Responce List'</li><br>
+        Following errors may occur
+        <li>406:Failure</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+    </tr>
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 14.Thana update API  -->
+    <tr>
+      <td>14.</td>
+      <td>Thana</td>
+      <td>/thana/:id</td>
+      <td><span id="method">PUT</span></td>
+      <td>
+        <pre>
+      ***authVerify,
+      ***hasAccess('can_edit_address'),
+      {
+        "thana":"jigatola-u",
+        "districtId":3
+    }   </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:Update sucessfully!</li><br>
+        Following errors may occur
+        <li>400:Required!</li>
+        <li>400:Must be string!</li>
+        <li>400:Minimum 3 character!</li>
+        <li>424:Please try again!</li>
+        <li>406:Already taken! try different one.</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+    </tr>
+
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 15.District remove API  -->
+    <tr>
+      <td>15.</td>
+      <td>Thana</td>
+      <td>/thana/:id</td>
+      <td><span id="method">DELETE</span></td>
+      <td>
+        <pre>
+      ***authVerify,
+      ***hasAccess('can_remove_address'),
+       </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:Update sucessfully!</li><br>
+        Following errors may occur
+        <li>404:You desired data set is empty.</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+    </tr>
+
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 16.Districts get API  -->
+    <tr>
+      <td>16.</td>
+      <td>Thana</td>
+      <td>/thana</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        <pre>
+    ***QueryString:?district=nara
+    ***authVerify
+        </pre>
+      </td>
+
+      <td>
+        Success Message
+        <li>200:Responce List</li><br>
+        Following errors may occur
+        <li>404:You desired data set is empty.</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+    </tr>
+
+
+    <!-- ===========================================================================AREA=================================================================== -->
+
+
+    <!-- 17.Area add API  -->
+    <tr>
+      <td>17.</td>
+      <td>Area</td>
+      <td>/area</td>
+      <td><span id="method">POST</span></td>
+      <td>
+        <pre>
+***authVerify,
+***hasAccess('can_create_address'),
+{
+  "area":["vuter golli","mogbazar","na"], 
+  "thanaId":1
+}  </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:'Responce List'</li><br>
+        Following errors may occur
+        <li>406:Failure</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+    </tr>
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 18.Area update API  -->
+    <tr>
+      <td>18.</td>
+      <td>Area</td>
+      <td>/area/:id</td>
+      <td><span id="method">PUT</span></td>
+      <td>
+        <pre>
+      ***authVerify,
+      ***hasAccess('can_edit_address'),
+      {
+        "area":"dhanmoni-3-u", 
+        "thanaId":1
+    }   </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:Update sucessfully!</li><br>
+        Following errors may occur
+        <li>400:Required!</li>
+        <li>400:Must be string!</li>
+        <li>400:Minimum 3 character!</li>
+        <li>424:Please try again!</li>
+        <li>406:Already taken! try different one.</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+    </tr>
+
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 19.Area remove API  -->
+    <tr>
+      <td>19.</td>
+      <td>Area</td>
+      <td>/area/:id</td>
+      <td><span id="method">DELETE</span></td>
+      <td>
+        <pre>
+      ***authVerify,
+      ***hasAccess('can_remove_address'),
+       </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:Update sucessfully!</li><br>
+        Following errors may occur
+        <li>404:You desired data set is empty.</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+    </tr>
+
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 20.Area get API  -->
+    <tr>
+      <td>20.</td>
+      <td>Area</td>
+      <td>/area</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        <pre>
+    ***QueryString:?thana=step
+    ***authVerify
+        </pre>
+      </td>
+
+      <td>
+        Success Message
+        <li>200:Responce List</li><br>
+        Following errors may occur
+        <li>404:You desired data set is empty.</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+    </tr>
+
+
+    <!-- ===========================================================================VILLAGE=================================================================== -->
+
+
+    <!-- 21.Village add API  -->
+    <tr>
+      <td>21.</td>
+      <td>Village</td>
+      <td>/village</td>
+      <td><span id="method">POST</span></td>
+      <td>
+        <pre>
+***authVerify,
+***hasAccess('can_create_address'),
+{
+  "block":["hp","member=para","na",""], 
+  "section":["jk","member=para","na",""], 
+  "sector":["km","member=para","na",""], 
+  "areaId":7
+} </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:'Responce List'</li><br>
+        Following errors may occur
+        <li>406:Failure</li>
+      </td>
+      <td>
+        <li>frontend:Done</li>
+        <li>backend:Improvement</li>
+
+    </tr>
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 22.Village update API  -->
+    <tr>
+      <td>22.</td>
+      <td>Village</td>
+      <td>/village/:id</td>
+      <td><span id="method">PUT</span></td>
+      <td>
+        <pre>
+      ***authVerify,
+      ***hasAccess('can_edit_address'),
+      {
+        "block":"hp", 
+        "section":"jk", 
+        "sector":"km", 
+        "areaId":7
+      }   </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:Update sucessfully!</li><br>
+        Following errors may occur
+        <li>424:Please try again!</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+    </tr>
+
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 23.Village remove API  -->
+    <tr>
+      <td>23.</td>
+      <td>Village</td>
+      <td>/village/:id</td>
+      <td><span id="method">DELETE</span></td>
+      <td>
+        <pre>
+      ***authVerify,
+      ***hasAccess('can_remove_address'),
+       </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:Update sucessfully!</li><br>
+        Following errors may occur
+        <li>404:You desired data set is empty.</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+    </tr>
+
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 24.Village get API  -->
+    <tr>
+      <td>24.</td>
+      <td>Village</td>
+      <td>/village</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        <pre>
+    ***QueryString:?area=step
+    ***authVerify
+        </pre>
+      </td>
+
+      <td>
+        Success Message
+        <li>200:Responce List</li><br>
+        Following errors may occur
+        <li>404:You desired data set is empty.</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+    </tr>
+
+
+
+    <!-- ===========================================================================ADDRESS=================================================================== -->
+
+
+    <!-- 25.Address add API  -->
+    <tr>
+      <td>25.</td>
+      <td>Address</td>
+      <td>/address</td>
+      <td><span id="method">POST</span></td>
+      <td>
+        <pre>
+***authVerify,
+***hasAccess('can_create_address'),
+{
+  "country": "Bangladesh",
+  "division": "Dhaka",
+  "district": "mirpur",
+  "thana": "pollobi",
+  "area": "pollobi",
+  "village": "sewrapara",
+  "roadNo": "mohosin road",
+  "houseNo": "52",
+  "propertyId":1
+} </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:'Responce List'</li><br>
+        Following errors may occur
+        <li>400:Required!</li>
+        <li>400:Must be string!</li>
+        <li>400:Minimum 3 character!</li>
+        <li>424:Please try again!</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+
+    </tr>
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 26.Address update API  -->
+    <tr>
+      <td>22.</td>
+      <td>Address</td>
+      <td>/address/:id</td>
+      <td><span id="method">PUT</span></td>
+      <td>
+        <pre>
+***authVerify,
+***hasAccess('can_edit_address'),
+{
+  "country": "Bangladesh",
+  "division": "Dhaka",
+  "district": "mirpur",
+  "thana": "pollobi",
+  "area": "pollobi",
+  "village": "sewrapara",
+  "roadNo": "mohosin road",
+  "houseNo": "52",
+  "propertyId":1
+}   </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:Update sucessfully!</li><br>
+        Following errors may occur
+        <li>400:Required!</li>
+        <li>400:Must be string!</li>
+        <li>400:Minimum 3 character!</li>
+        <li>424:Please try again!</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+    </tr>
+
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 27.Address remove API  -->
+    <tr>
+      <td>23.</td>
+      <td>Address</td>
+      <td>/address/:id</td>
+      <td><span id="method">DELETE</span></td>
+      <td>
+        <pre>
+      ***authVerify,
+      ***hasAccess('can_remove_address'),
+       </pre>
+      </td>
+      <td>
+        Success Message
+        <li>200:Delete sucessfully!</li><br>
+        Following errors may occur
+        <li>404:You desired data set is empty.</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+    </tr>
+
+    <!-- ------------------------------------------------------------------------------------------- -->
+
+    <!-- 28.Village get API  -->
+    <tr>
+      <td>28.</td>
+      <td>Address</td>
+      <td>/address/:id</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        <pre>
+    ***authVerify
+        </pre>
+      </td>
+
+      <td>
+        Success Message
+        <li>200:Responce List</li><br>
+        Following errors may occur
+        <li>404:You desired data set is empty.</li>
+        <li>500:Inernal error! Wait or inform to Greeho.com.</li>
+      </td>
+      <!-- <td>Done</td> -->
+    </tr>
+
+  </table>
+</body>
+
+</html>

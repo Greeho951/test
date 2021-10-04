@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greeho API List</title>
+
+  <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #customers td,
+    #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #customers tr:hover {
+      background-color: rgb(231, 122, 122);
+    }
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04aa6d;
+      color: white;
+    }
+
+    #method {
+      background-color: rgb(196, 43, 43);
+    }
+
+    #no {
+      width: 10px;
+    }
+
+    #name {
+      width: 55px;
+    }
+
+    #url {
+      width: 70px;
+    }
+
+    #method2 {
+      width: 45px;
+    }
+
+    #payload {
+      width: 225px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="background-color: rgba(64, 66, 190, 0.178); text-align: center">
+    Backend API list || Developed by Md.Tajal Islam
+  </h1>
+  <h3 style="text-align: center">Company Name: GREEHO.com v2</h3>
+  <hr />
+  <p style="text-align: center"><i>Module Name:</i><b>Authentications</b></p>
+  <p style="text-align: center"><i>Root-Url:</i><b>http://localhost:3001/api</b></p>
+
+  <a href="http://localhost:3001/sub-category-api"> SUB-CATEGORY| </a>
+  <a href="http://localhost:3001/category-api"> CATEGORY |</a>
+  <a href="http://localhost:3001/cart-api"> CART |</a>
+  <a href="http://localhost:3001/address-api"> ADDRESS |</a>
+  <a href="http://localhost:3001/lift-ac-api"> LIFT-AC |</a>
+  <a href="http://localhost:3001/property-api"> PROPERTY |</a>
+  
+
+  <hr style="height: 6px; background-color: rgb(165, 177, 177)" />
+
+  <table id="customers">
+
+    <!-- column name  -->
+    <tr>
+      <th id="no">No</th>
+      <th id="name">Name</th>
+      <th id="url">URL</th>
+      <th id="method2">Method</th>
+      <th id="payload">Payload</th>
+      <th>Details</th>
+    </tr>
+
+    <!-- 1.Home Page API  -->
+    <tr>
+      <td>1.</td>
+      <td>Home</td>
+      <td>root</td>
+      <td><span id="method">GET</span></td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+
+
+    <!-- 2.Sign-up API  -->
+    <tr>
+      <td>2.</td>
+      <td>SignUp</td>
+      <td>/sign-up</td>
+      <td><span id="method">POST</span></td>
+      <td>
+        <pre>
+{
+"phnNo":"01883950739",
+"password": "tajalislam"
+}         </pre>
+
+      </td>
+      <td>
+        <li>Phone number customize</li>
+        <li>Validation</li>
+      </td>
+    </tr>
+
+
+    <!-- 3.Sign-in API  -->
+    <tr>
+      <td>3.</td>
+      <td>SignIn</td>
+      <td>/sign-in</td>
+      <td><span id="method">POST</span></td>
+      <td>
+        <pre>
+{
+"phnNo":"01883950739",
+"password": "tajalislam"
+}         </pre>
+
+      </td>
+      <td>
+        <li>Phone number customize</li>
+        <li>Create a jwt token</li>
+      </td>
+    </tr>
+
+
+    <!-- 4.Password change API  -->
+    <tr>
+      <td>4.</td>
+      <td>Pass change</td>
+      <td>/password-change</td>
+      <td><span id="method">PUT</span></td>
+      <td>
+        <pre>
+***authVerify
+{
+  "phnNo":"01883950739", 
+  "oldPassword":"tajalislam2", 
+  "newPassword":"tajalislam"
+}        </pre>
+
+      </td>
+      <td>
+        <li>Phone number customize</li>
+        <li>Validation</li>
+        <li>OldPassword !== newPassword</li>
+      </td>
+    </tr>
+
+
+    <!-- 5.Profile Picture Update API  -->
+    <tr>
+      <td>5.</td>
+      <td>Profile Picture</td>
+      <td>/profile-image</td>
+      <td><span id="method">PUT</span></td>
+      <td>
+        ***authVerify <br>
+        ***form-data =>file =>profile=>select picture
+      </td>
+      <td>
+        <li>N/A</li>
+      </td>
+    </tr>
+
+
+    <!-- 6.User Status API  -->
+    <tr>
+      <td>6.</td>
+      <td>User Status</td>
+      <td>/user-status/2</td>
+      <td><span id="method">PUT</span></td>
+      <td>
+        ***authVerify <br>
+        ***hasAccess('can_edit_user') <br>
+        {
+        "status":true
+        }
+      </td>
+      <td>
+        <li>Validation</li>
+      </td>
+    </tr>
+
+
+    <!-- 7.User List API  -->
+    <tr>
+      <td>7.</td>
+      <td>User List</td>
+      <td>/users</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        ***authVerify <br>
+        ***hasAccess('can_view_user'),
+      </td>
+      <td>
+        <li>N/A</li>
+      </td>
+    </tr>
+
+    <!-- 8.User Active List API  -->
+    <tr>
+      <td>8.</td>
+      <td>Active List</td>
+      <td>/active-users</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        ***authVerify <br>
+        ***hasAccess('can_view_user'),
+      </td>
+      <td>
+        <li>N/A</li>
+      </td>
+    </tr>
+
+
+    <!-- 9.Blocked User List API  -->
+    <tr>
+      <td>9.</td>
+      <td>Blocked List</td>
+      <td>/blocked-users</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        ***authVerify <br>
+        ***hasAccess('can_view_user')
+      </td>
+      <td>
+        <li>N/A</li>
+      </td>
+    </tr>
+
+
+    <!-- 7.Unverified User List API  -->
+    <tr>
+      <td>10.</td>
+      <td>Un-verified List</td>
+      <td>/unverified-users</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        ***authVerify <br>
+        ***hasAccess('can_view_user'),
+      </td>
+      <td>
+        <li>N/A</li>
+      </td>
+    </tr>
+
+
+    <!-- 11.User Details API  -->
+    <tr>
+      <td>11.</td>
+      <td>User Details </td>
+      <td>/user-details/:id</td>
+      <td><span id="method">GET</span></td>
+      <td>
+        ***authVerify <br>
+      </td>
+      <td>
+        <li>N/A</li>
+      </td>
+    </tr>
+
+    <!-- 12.OTP Verify API  -->
+    <tr>
+      <td>12.</td>
+      <td>OTP Verify </td>
+      <td>/otp-verify</td>
+      <td><span id="method">PUT</span></td>
+      <td>
+        <pre>
+{
+  "phnNo": "01883950739",
+  "otp":329586
+}
+</pre>
+      </td>
+      <td>
+        <li>N/A</li>
+      </td>
+    </tr>
+
+
+  </table>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+{
+  "name": "gv2-server",
+  "version": "1.0.0",
+  "description": "A property management tool ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Greeho951/Gv2-server.git"
+  },
+  "keywords": [
+    "backend"
+  ],
+  "author": "greeho.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Greeho951/Gv2-server/issues"
+  },
+  "homepage": "https://github.com/Greeho951/Gv2-server#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-validator": "^6.11.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "multer": "^1.4.3",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.13",
+    "request": "^2.88.2",
+    "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0",
+    "swagger-ui-express": "^4.1.6"
+  }
+}

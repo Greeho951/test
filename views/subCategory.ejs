@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greeho API List </title>
+
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: rgb(231, 122, 122);
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        #method {
+            background-color: rgb(196, 43, 43)
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="background-color: rgba(64, 66, 190, 0.178); text-align: center;">Backend API list || Developed by
+        Md.Tajal Islam</h1>
+    <h3 style="text-align: center;">Company Name: GREEHO.com</h3>
+    <hr>
+    <p style="text-align: center;"><i>Module Name:</i><b>Sub-Category</b></p>
+
+    <a href="http://localhost:3001"> HOME | </a>
+    <a href="http://localhost:3001/category-api"> CATEGORY </a>
+
+
+    <hr style="height: 6px; background-color: rgb(165, 177, 177);">
+
+    <table id="customers">
+        <!-- column name  -->
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Payload</th>
+            <th>Responce</th>
+            <th>End-point</th>
+            <th>Method</th>
+        </tr>
+
+        <!-- 1.Sub category API Add -->
+        <tr>
+            <td>1.</td>
+            <td>Add</td>
+            <td>
+                <pre>
+***authVerify
+***hasAccess('can_create_category_subCategory')
+{
+    "title":"6 ton ac service",
+    "categoryId":1
+}
+            </pre>
+            </td>
+            <td>
+                <pre>
+{
+    "subCategory": {
+        "id": 4,
+        "title": "6 ton ac service-2",
+        "categoryId": 1,
+        "updatedAt": "2021-08-09T11:07:48.602Z",
+        "createdAt": "2021-08-09T11:07:48.602Z"
+    }
+}
+</pre>
+            </td>
+            <td>/sub-category</td>
+            <td><span id="method">POST</span></td>
+        </tr>
+
+        <!-- end -->
+
+        <!-- 2.Sub category API  Edit-->
+        <tr>
+            <td>2.</td>
+            <td>Edit</td>
+            <td>
+                <pre>
+***authVerify, 
+***hasAccess('can_edit_category_subCategory'),
+{
+    "title":"6 ton ac service",
+    "categoryId":1
+}
+            </pre>
+            </td>
+            <td>
+                {
+                "subCategory": "Update sucessfully"
+                }
+            </td>
+            <td>/sub-category/:id</td>
+            <td><span id="method">PUT</span></td>
+        </tr>
+
+        <!-- 3.Sub-Category API Status Edit -->
+        <tr>
+            <td>3.</td>
+            <td>Status update</td>
+            <td>
+                <pre>
+***authVerify, <br>
+***hasAccess('can_edit_category_subCategory'),<br>
+{
+    "status":true
+}
+</pre>
+
+            </td>
+            <td>
+                {
+                "subCategory": "Update sucessfully"
+                }
+
+            </td>
+            <td>/sub-category-status/:id</td>
+            <td><span id="method">PUT</span></td>
+        </tr>
+
+        <!-- 4.Delete SubCategory API  -->
+        <tr>
+            <td>4.</td>
+            <td>Delete</td>
+            <td>
+                ***authVerify <br>
+                ***hasAccess('can_remove_category_subCategory'
+            </td>
+            <td>
+                {
+                "message": "Delete sucessfully"
+                }
+            </td>
+            <td>/sub-category/:id</td>
+            <td><span id="method">DELETE</span></td>
+        </tr>
+
+        <!-- 5.Category list API  -->
+        <tr>
+            <td>5.</td>
+            <td>Active list</td>
+            <td>
+                ***authVerify, <br>
+                ***hasAccess('can_edit_category_subCategory'),<br>
+                QueryString: page,size
+            </td>
+
+            <td>
+                <pre>
+{
+"list": {
+"totalItems": 3,
+"totalPages": 1,
+"currentPage": 1,
+"records": [
+    {
+        "id": 2,
+        "title": "2 ton ac service",
+        "status": true
+    },
+    {
+        "id": 3,
+        "title": "6 ton ac service",
+        "status": true
+    },
+    {
+        "id": 4,
+        "title": "6 ton ac service-2",
+        "status": true
+    }
+]
+}
+}
+</pre>
+            </td>
+            <td>/sub-category</td>
+            <td><span id="method">GET</span></td>
+        </tr>
+
+        <!-- 5.Category list API  -->
+        <tr>
+            <td>6.</td>
+            <td>list</td>
+            <td>
+                ***authVerify, <br>
+                ***hasAccess('can_edit_category_subCategory'),<br>
+                QueryString: page,size
+            </td>
+
+            <td>
+                <pre>
+{
+"list": {
+"totalItems": 3,
+"totalPages": 1,
+"currentPage": 1,
+"records": [
+    {
+        "id": 2,
+        "title": "2 ton ac service",
+        "status": true
+    },
+    {
+        "id": 3,
+        "title": "6 ton ac service",
+        "status": true
+    },
+    {
+        "id": 4,
+        "title": "6 ton ac service-2",
+        "status": true
+    }
+]
+}
+}
+</pre>
+            </td>
+            <td>/inactive-sub-category</td>
+            <td><span id="method">GET</span></td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
